@@ -1,29 +1,40 @@
 import Image from "next/image";
 import Link from "next/link";
-import { achievements, caseStudyPreviews, competencies, contact } from "@/content/site-content";
+import { about, competencies, contact, services, timeline } from "@/content/site-content";
+import { ServicesScroll } from "@/components/services-scroll";
+import { CareerTimeline } from "@/components/career-timeline";
 
-const services = [
-  ["01", "Demand generation", "Create the audience, message, and nurture programs that turn unfamiliar buyers into qualified pipeline."],
-  ["02", "Demand capture", "Build intent-led paid media that finds buyers at the moment they are ready to act."],
-  ["03", "Revenue operations", "Connect analytics, attribution, CRM, and automation so marketing outcomes are visible and repeatable."],
-];
-const timeline = [
-  ["2018–2021", "Landmark Realty", "Business Development Lead — generated $2M+ in annual revenue with multi-channel partner and lead-generation programs."],
-  ["2021–2025", "Alerzo", "Commercial Lead, Growth & Campaign Strategy — grew monthly GMV 10× while serving 40,000+ retailers."],
-  ["2025", "Ivey Business School", "MBA — sharpened strategic leadership and analytical decision-making."],
-  ["2026–Present", "Laserglow Technologies", "Performance Marketing Manager — building full-funnel systems that grew qualified pipeline by 20%."],
-];
-const icons: Record<string, string> = { "GA4": "/icons/ga4.svg", "Google Ads": "/icons/google-ads.svg", "LinkedIn Ads": "/icons/linkedin-ads.svg", "Meta Ads": "/icons/meta-ads.svg", "GTM": "/icons/gtm.svg", "HubSpot": "/icons/hubspot.svg", "Tableau": "/icons/tableau.svg" };
+const icons: Record<string, string> = { "GA4": "/icons/ga4.svg", "Google Ads": "/icons/google-ads.svg", "LinkedIn Ads": "/icons/linkedin-ads.svg", "Meta Ads": "/icons/meta-ads.svg", "GTM": "/icons/gtm.svg", "HubSpot": "/icons/hubspot.svg", "Tableau": "/icons/tableau.svg", "DV360": "/icons/dv360.png", "Clay": "/icons/clay.jpeg", "AirOps": "/icons/airops.png", "SA360": "/icons/sa360.png", "TikTok": "/icons/tiktok.svg" };
+const certificationIcons: Record<string, string> = { "Google Analytics": "/icons/ga4.svg", "Search Ads 360": "/icons/sa360.png", "Display & Video 360": "/icons/dv360.png", "Google Ads Search": "/icons/google-ads.svg", "Google Ads Display": "/icons/google-ads.svg", "Google Tag Manager": "/icons/gtm.svg" };
 
 export default function HomePage() { return <>
   <section className="site-section scheme-2"><div className="container hero-grid">
-    <div><p className="eyebrow">Performance marketing manager</p><h1 className="display">I build demand systems that make growth measurable.</h1><p className="lede">From first touch to qualified pipeline, I connect media, analytics, and automation to move the numbers that matter.</p><div className="actions"><Link className="button button--solid focus-ring" href="#work">Explore my work</Link><a className="button button--ghost focus-ring" href={`mailto:${contact.email}`}>Start a conversation</a></div></div>
-    <Image className="hero-media" src="/design/images/home-hero-header-section.png" alt="Niran Olutimayin" width={1400} height={1400} priority />
+    <div><h1 className="display">I build demand systems that make growth measurable.</h1><p className="lede">From first touch to qualified pipeline, I connect media, analytics, and automation to move the numbers that matter.</p><div className="actions"><Link className="button button--solid focus-ring" href="/work">Explore my work</Link><a className="button button--ghost focus-ring" href={contact.emailHref}>Start a conversation</a></div></div>
+    <div className="hero-image-window"><Image src="/niran-about.jpg" alt="Niran Olutimayin, formal portrait" width={500} height={500} style={{ objectPosition: "center 20%" }} priority /></div>
   </div></section>
-  <section id="services" className="site-section scheme-1"><div className="container"><p className="eyebrow">What I build</p><h2 className="heading" style={{ marginBottom: "3rem" }}>Three connected growth disciplines.</h2><div className="service-grid">{services.map(([number,title,copy]) => <article className="service-card" key={number}><p className="service-number">{number}</p><h3 className="subheading">{title}</h3><p className="body-copy">{copy}</p></article>)}</div></div></section>
-  <section className="site-section scheme-2"><div className="container"><p className="eyebrow">Career impact</p><h2 className="heading" style={{ marginBottom: "3rem" }}>The work shows up in the numbers.</h2><div className="stats-grid">{achievements.slice(0,4).map((item) => <article className="stat-card" key={item.label}><p className="stat-value">{item.stat}</p><h3 className="subheading">{item.label}</h3><p>{item.company}</p></article>)}</div></div></section>
-  <section id="work" className="site-section scheme-2"><div className="container"><p className="eyebrow">Selected work</p><h2 className="heading" style={{ marginBottom: "3rem" }}>Growth stories across distinct markets.</h2><div className="work-grid">{caseStudyPreviews.map((item, i) => <article className="work-card" key={item.slug}><Image src={`/design/images/home-portfolio-list-section-${i}.${i === 2 ? "jpg" : "png"}`} alt="" width={1000} height={750}/><p className="eyebrow">{item.name}</p><h3 className="subheading">{item.teaser}</h3><Link className="work-link focus-ring" href={item.href}>Read case study →</Link></article>)}</div></div></section>
-  <section className="site-section scheme-7"><div className="container"><p className="eyebrow">Core competencies</p><h2 className="heading" style={{ marginBottom: "3rem" }}>A modern marketing operating system.</h2><div className="skills-grid">{competencies.platforms.map((skill) => <div className="skill-card" key={skill}>{icons[skill] ? <Image src={icons[skill]} alt="" width={96} height={96} /> : <span className="eyebrow">Tool</span>}<span className="subheading">{skill}</span></div>)}</div></div></section>
-  <section id="timeline" className="site-section scheme-2"><div className="container" style={{ maxWidth: "64rem" }}><p className="eyebrow">Career timeline</p><h2 className="heading" style={{ marginBottom: "3rem" }}>Building towards a full-funnel perspective.</h2><div className="timeline">{timeline.map(([date, title, copy]) => <article className="timeline-item" key={date}><p className="timeline-date">{date}</p><h3 className="subheading">{title}</h3><p className="body-copy">{copy}</p></article>)}</div></div></section>
-  <section className="site-section scheme-3"><div className="container" style={{ textAlign: "center", maxWidth: "64rem" }}><p className="eyebrow">Let’s work together</p><h2 className="heading">Looking for a marketer who can connect strategy to revenue?</h2><div className="actions" style={{ justifyContent: "center" }}><a className="button button--solid focus-ring" href={`mailto:${contact.email}`}>Email Niran</a><a className="button button--ghost focus-ring" href={contact.phoneHref}>{contact.phone}</a></div></div></section>
+  <section id="services" className="site-section scheme-1 services-section">
+    <div className="container services-static"><p className="eyebrow">What I build</p><h2 className="heading" style={{ marginBottom: "3rem" }}>Three connected growth disciplines.</h2><div className="service-grid">{services.map((service) => <article className="service-card" key={service.number}><p className="service-number">{service.number}</p><h3 className="subheading">{service.title}</h3><p className="body-copy">{service.copy}</p></article>)}</div></div>
+    <div className="container services-scroll-intro"><p className="eyebrow">What I build</p><h2 className="heading" style={{ marginBottom: "1rem" }}>Three connected growth disciplines.</h2></div>
+    <ServicesScroll services={services} />
+  </section>
+  <section className="site-section scheme-2"><div className="container" style={{ maxWidth: "64rem" }}><p className="eyebrow eyebrow--section">Career timeline</p><h2 className="heading" style={{ marginBottom: "3rem" }}>Building towards a full-funnel perspective.</h2><CareerTimeline items={timeline} /></div></section>
+  <section className="site-section scheme-7"><div className="container"><p className="eyebrow">Core competencies</p><h2 className="heading" style={{ marginBottom: "3rem" }}>A modern marketing operating system.</h2><div className="logo-strip logo-strip--tools"><div className="logo-strip-track">{competencies.platforms.map((skill) => icons[skill] ? <Image src={icons[skill]} alt={skill} width={96} height={40} key={skill} /> : <span className="logo-strip-text" key={skill}>{skill}</span>)}{competencies.platforms.map((skill) => icons[skill] ? <Image src={icons[skill]} alt="" aria-hidden width={96} height={40} key={`${skill}-repeat`} /> : <span className="logo-strip-text" aria-hidden key={`${skill}-repeat`}>{skill}</span>)}</div></div></div></section>
+  <section className="site-section scheme-7"><div className="container"><p className="eyebrow eyebrow--section">Education</p><div className="edu-list">{about.education.map((item) => <article className="edu-row" key={item.school}><Image className="edu-logo" src={item.logo} alt={`${item.school} logo`} width={480} height={240} /><div><h3 className="subheading">{item.school}</h3><p className="edu-degree">{item.degree}</p><p className="edu-meta">{item.where}</p></div></article>)}</div></div></section>
+  <section className="site-section scheme-1"><div className="container two-col"><div><p className="eyebrow">Credentials</p><h2 className="heading">Practitioner-certified.</h2><p className="body-copy">Certified across the tools that power modern paid media, measurement, and reporting.</p></div><div className="credential-logo-grid">{about.certifications.map((item) => <div className="credential-logo-box" key={item}><Image src={certificationIcons[item]} alt={item} width={64} height={40} /><span>{item}</span></div>)}</div></div></section>
+  <section className="site-section scheme-7"><div className="container"><p className="eyebrow">Leadership &amp; Impact</p><h2 className="heading" style={{ marginBottom: "3rem" }}>Beyond the pipeline.</h2>{about.leadership.map((item, i) => {
+            const images = item.images.map((src) => <Image src={src} alt="" width={600} height={450} key={src} />);
+            const imageContent = item.images.length === 1
+              ? <a href={item.link} target="_blank" rel="noopener noreferrer" className={`portfolio-image focus-ring${item.imageFit === "contain" ? " portfolio-image--contain" : ""}`}>{images}</a>
+              : <div className="portfolio-image leadership-gallery">{images}</div>;
+            return <article className={`portfolio-row${i % 2 ? " portfolio-row--reverse" : ""}`} key={item.title}>
+              {imageContent}
+              <div className="portfolio-content">
+                <h3 className="subheading">{item.title}</h3>
+                <p className="body-copy">{item.description}</p>
+                <ul className="portfolio-tags">{item.tags.map((tag) => <li className="portfolio-tag" key={tag}>{tag}</li>)}</ul>
+                {item.link ? <a className="work-link focus-ring" href={item.link} target="_blank" rel="noopener noreferrer">Read the announcement →</a> : null}
+              </div>
+            </article>;
+          })}</div></section>
+  <section className="site-section scheme-3"><div className="container" style={{ textAlign: "center", maxWidth: "64rem" }}><p className="eyebrow">Let’s work together</p><h2 className="heading">Looking for a marketer who can connect strategy to revenue?</h2><div className="actions" style={{ justifyContent: "center" }}><a className="button button--solid focus-ring" href={contact.emailHref}>Email Niran</a><a className="button button--ghost focus-ring" href={contact.phoneHref}>{contact.phone}</a></div></div></section>
 </> }
