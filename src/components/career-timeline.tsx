@@ -8,7 +8,7 @@ export function CareerTimeline({ items }: { items: TimelineEntry[] }) {
       {items.map((item, i) => (
         <div className={`timeline-zigzag-item${i % 2 ? " timeline-zigzag-item--reverse" : ""}`} key={item.date}>
           <div className="timeline-zigzag-content">
-            <div className="timeline-brand"><Image src={item.logo} alt={`${item.title} logo`} width={56} height={56} /><div><p className="timeline-date">{item.date}</p><h3 className="subheading">{item.title}</h3></div></div>
+            <div className="timeline-brand"><Image src={item.logo} alt={`${item.title} logo`} width={96} height={96} /><div><p className="timeline-date">{item.date}</p><h3 className="subheading">{item.title}</h3></div></div>
             <p className="body-copy">{item.copy}</p>
           </div>
           <div className="timeline-zigzag-dot" />
