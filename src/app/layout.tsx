@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.oluniraportfolio.com"),
   title: "Niran Olutimayin",
   description: "Demand generation, demand capture, and revenue operations for ambitious B2B and B2C teams.",
 };
