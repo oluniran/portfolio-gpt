@@ -46,7 +46,12 @@ export function LandmarkExperiences({ experiences }: { experiences: LandmarkExpe
                       <Image src={experience.image} alt="" width={400} height={300} />
                     </span>
                     <p className="experience-item-summary">{experience.summary}</p>
-                    <a className="button button--solid focus-ring" href={experience.href} target="_blank" rel="noopener noreferrer">
+                    <a
+                      className={`button focus-ring ${experience.slug === "waterview" ? "button--accent" : "button--solid"}`}
+                      href={experience.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       View Project
                     </a>
                   </div>
