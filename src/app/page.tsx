@@ -10,7 +10,7 @@ const certificationIcons: Record<string, string> = { "Google Analytics": "/icons
 export default function HomePage() { return <>
   <section className="site-section scheme-2"><div className="container hero-grid">
     <div><h1 className="display">I build demand systems that make growth measurable.</h1><p className="lede">From first touch to qualified pipeline, I connect media, analytics, and automation to move the numbers that matter.</p><div className="actions"><Link className="button button--solid focus-ring" href="/work">Explore my work</Link><a className="button button--ghost focus-ring" href={contact.emailHref}>Start a conversation</a></div></div>
-    <div className="hero-image-window"><Image src="/niran-about.jpg" alt="Niran Olutimayin, formal portrait" width={500} height={500} style={{ objectPosition: "center 20%" }} priority /></div>
+    <div className="hero-image-window"><Image src="/niran-about.jpg" alt="Niran Olutimayin, formal portrait" width={500} height={500} sizes="(min-width: 768px) 35vw, 85vw" style={{ objectPosition: "center 20%" }} priority /></div>
   </div></section>
   <section id="services" className="site-section scheme-1 services-section">
     <div className="container services-static"><p className="eyebrow">What I build</p><h2 className="heading" style={{ marginBottom: "3rem" }}>Three connected growth disciplines.</h2><div className="service-grid">{services.map((service) => <article className="service-card" key={service.number}><p className="service-number">{service.number}</p><h3 className="subheading">{service.title}</h3><p className="body-copy">{service.copy}</p></article>)}</div></div>
