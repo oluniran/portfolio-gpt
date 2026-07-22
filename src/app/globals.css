@@ -190,7 +190,7 @@ a { color: inherit; text-decoration: none; }
 @media (min-width:1024px) {
   .experience-portfolio-mobile-image { display:none; }
   .experience-portfolio-row { min-height:6rem; }
-  .experience-portfolio-image-col { display:block; position:absolute; top:0; right:0; bottom:0; width:45%; height:100%; padding-left:2.5rem; pointer-events:none; }
+  .experience-portfolio-image-col { display:block; position:absolute; top:0; right:0; bottom:0; width:45%; height:100%; padding-left:2.5rem; pointer-events:none; overflow:hidden; }
   .experience-portfolio-image-inner { position:sticky; top:2rem; height:20rem; max-height:60vh; overflow:hidden; opacity:0; transition:opacity .3s ease; }
   .experience-portfolio-image-inner[data-visible="true"] { opacity:1; }
   .experience-portfolio-image-inner img { object-fit:cover; }
