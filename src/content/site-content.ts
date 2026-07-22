@@ -169,6 +169,15 @@ export const about = {
 export type CaseStudyMetric = { value: string; label: string };
 export type ClientLogo = { name: string; src: string };
 export type ExternalCaseStudy = { title: string; company: string; location?: string; href: string; image?: string };
+export type LandmarkExperience = {
+  slug: string;
+  name: string;
+  tagline: string;
+  image: string;
+  href: string;
+  // DRAFT — placeholder contributions, confirm/edit before this ever ships publicly.
+  contributions: string[];
+};
 
 export type CaseStudy = {
   brand: "laserglow" | "alerzo" | "landmark";
@@ -180,6 +189,7 @@ export type CaseStudy = {
   callout?: string;
   clientLogos?: ClientLogo[];
   externalCaseStudies?: ExternalCaseStudy[];
+  experiences?: LandmarkExperience[];
   tactics: string[];
   closingLine?: { pre: string; emphasis: string };
   prev?: { href: string; label: string };
@@ -300,6 +310,70 @@ export const caseStudies: Record<string, CaseStudy> = {
       { name: "CrossBoundary", src: "/logos/clients/crossboundary.jpeg" },
       { name: "Spur Steak Ranches", src: "/logos/clients/spur.png" },
       { name: "KFC", src: "/logos/clients/kfc.png" },
+    ],
+    // DRAFT — contributions below are plausible placeholders grounded in the real tactics/metrics
+    // above, NOT verified per-experience facts. Confirm/edit before this ever ships publicly.
+    experiences: [
+      {
+        slug: "kids-club",
+        name: "Landmark Kids' Club",
+        tagline: "Kids' membership and entertainment club",
+        image: "/design/images/landmark-experiences/kids-club.jpg",
+        href: "http://kids.landmarkafrica.com",
+        contributions: [
+          "Positioned Kids' Club as a standalone membership product for the family/leisure audience segment",
+          "Coordinated cross-team execution for family programming and events that drove membership sign-ups",
+          "Used the ecosystem's weekly visitor and footfall data to justify continued investment in family-focused activation",
+        ],
+      },
+      {
+        slug: "hotels",
+        name: "Landmark Hotels",
+        tagline: "Mixed-use hospitality: apartments, hotel, boulevard rooms, beach resort",
+        image: "/design/images/landmark-experiences/hotels.jpeg",
+        href: "https://landmarkhotel.ng/",
+        contributions: [
+          "Sold advertising and sponsorship partnerships with hospitality tie-ins across the hotel, apartments, and beach resort",
+          "Supported occupancy-driving initiatives across room categories",
+          "Negotiated F&B and retail partner agreements that fed foot traffic into the hospitality side of the property",
+        ],
+      },
+      {
+        slug: "waterview",
+        name: "Landmark Waterview",
+        tagline: "Off-plan waterfront apartments",
+        image: "/design/images/landmark-experiences/waterview.png",
+        href: "https://landmarkwaterview.com/",
+        contributions: [
+          "Led sales for the off-plan apartment development, closing 30 units across 1-bed to 3-bed layouts through a qualified, high-net-worth pipeline",
+          "Led sales for the multi-story high-rise development, from first contact through signed contract",
+          "Qualified leads using MEDDPICC to prioritize deals ready to close",
+        ],
+      },
+      {
+        slug: "upside-down-house",
+        name: "Landmark Upside Down House",
+        tagline: "West Africa's first upside-down house attraction",
+        image: "/design/images/landmark-experiences/upside-down-house.jpg",
+        href: "https://upsidedownhouse.ng/",
+        contributions: [
+          "Positioned the attraction as a flagship differentiator in ecosystem marketing and press",
+          "Supported partner and sponsorship conversations that leveraged the attraction's visibility",
+          "Used footfall data to demonstrate the attraction's pull for prospective tenants and partners",
+        ],
+      },
+      {
+        slug: "events",
+        name: "Landmark Events",
+        tagline: "Events and activations venue",
+        image: "/design/images/landmark-experiences/events.jpg",
+        href: "https://event.landmarkafrica.com/",
+        contributions: [
+          "Sold event and activation partnerships to brand and sponsor partners across Landmark locations",
+          "Coordinated with venue operations to qualify and close event bookings",
+          "Used past-event footfall and engagement data to pitch future activations",
+        ],
+      },
     ],
     tactics: [
       "Led business development across Landmark's full ecosystem, spanning residential, retail, F&B, and hospitality, prospecting and qualifying tenants, partners, and buyers for each vertical",
