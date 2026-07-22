@@ -48,6 +48,7 @@ export const services: ServiceDiscipline[] = [
       { label: "Webinars", icon: "webinar" },
       { label: "Paid social", icon: "paid-social" },
       { label: "Email nurture", icon: "email" },
+      { label: "Video", icon: "video" },
     ],
   },
   {
@@ -60,6 +61,7 @@ export const services: ServiceDiscipline[] = [
       { label: "Lead scoring", icon: "lead-scoring" },
       { label: "A/B testing", icon: "ab-testing" },
       { label: "Retargeting", icon: "retargeting" },
+      { label: "Surveys", icon: "survey" },
     ],
   },
   {
@@ -72,6 +74,7 @@ export const services: ServiceDiscipline[] = [
       { label: "Attribution", icon: "attribution" },
       { label: "Segmentation", icon: "segmentation" },
       { label: "Reporting", icon: "reporting" },
+      { label: "AI automations", icon: "ai-chip" },
     ],
   },
 ];
@@ -179,8 +182,8 @@ export type CaseStudy = {
   externalCaseStudies?: ExternalCaseStudy[];
   tactics: string[];
   closingLine?: { pre: string; emphasis: string };
-  prev: { href: string; label: string };
-  next: { href: string; label: string };
+  prev?: { href: string; label: string };
+  next?: { href: string; label: string };
 };
 
 export const caseStudies: Record<string, CaseStudy> = {
@@ -202,26 +205,27 @@ export const caseStudies: Record<string, CaseStudy> = {
     callout:
       "Laserglow's strategy names the pillar plainly: proof points, not promises — earned through deployment scale and solutions tailored by facility, not off-the-shelf SKUs. I ran every channel on that same standard, rebuilding attribution so results are demonstrable and turning a trade-show diagnostic into structured first-party data.",
     clientLogos: [
-      { name: "John Deere", src: "/logos/clients/john-deere.jpg" },
       { name: "UPS", src: "/logos/clients/ups.svg" },
       { name: "GXO", src: "/logos/clients/gxo.svg" },
       { name: "Amgen", src: "/logos/clients/amgen.svg" },
       { name: "GSK", src: "/logos/clients/gsk.png" },
-      { name: "Deloitte Canada", src: "/logos/clients/deloitte.svg" },
       { name: "Corning", src: "/logos/clients/corning.jpg" },
+      { name: "Amazon", src: "/logos/clients/amazon.jpg" },
+      { name: "Grainger", src: "/logos/clients/grainger.png" },
+      { name: "Walmart", src: "/logos/clients/walmart.jpg" },
+      { name: "Hyundai", src: "/logos/clients/hyundai.jpg" },
+      { name: "Toyota", src: "/logos/clients/toyota.svg" },
     ],
     tactics: [
-      "Audited GA4 conversion tracking and Google Tag Manager (GTM) implementation to close attribution gaps between ad platforms and site data",
-      "Built and administered HubSpot CRM infrastructure — automated lead scoring, lifecycle workflows, and nurture sequences that accelerate MQL to opportunity",
-      "Structured search, Performance Max, lead-generation, and thought-leadership campaigns mapped to ICP personas across industrial verticals",
-      "Built reusable AI-assisted creative workflows — prompt systems and content variants — to speed up campaign asset production across search, social, and tradeshow materials without losing message consistency",
-      "Built demand generation beyond paid ads — webinars, podcasts, and automated email nurture sequences that support movement from MQL to opportunity",
-      "Sharpened category positioning — translating MODEX diagnostic findings into a specific, buyer-tension-led narrative around Smart Hazard Awareness instead of generic industrial-safety messaging",
-      "Led tradeshow marketing strategy across North America in material handling and logistics to build category authority",
-      "Designed and ran an interactive Hazard Awareness diagnostic at the MODEX 2026 booth — turning booth traffic into structured, first-party data instead of a static brochure",
-      "Partnered cross-functionally with brand, content, and sales-facing teams to connect the campaign plan to the commercial outcome",
+      "Audited GA4 conversion tracking and Google Tag Manager implementation to close attribution gaps between ad platforms and site data.",
+      "Structured search, Performance Max, and lead-generation campaigns mapped to ICP personas across industrial verticals, driving 391 Google Ads conversions (+67% QoQ) and cutting cost per conversion from $143 to $73.",
+      "Built LinkedIn Ads strategy for industrial B2B audiences, including retargeting setup, attribution modeling, and budget splits across cold and retargeting tiers, driving 100% QoQ lead growth and $200K+ in quotes raised.",
+      "Managed keyword optimization, bid adjustments, and budget allocation across Google Ads campaigns targeting safety managers and operations directors at warehouses and manufacturing facilities, contributing to 20% qualified pipeline growth.",
+      "Built demand generation infrastructure across HubSpot lead scoring, lifecycle workflows, webinars, podcasts, and email nurture sequences to move leads from MQL to opportunity faster.",
+      "Built reusable AI-assisted creative workflows, including prompt systems and content variants, to speed up campaign asset production across search, social, and tradeshow materials without losing message consistency.",
+      "Sharpened category positioning around Smart Hazard Awareness, replacing generic industrial-safety messaging with a narrative built on direct buyer research.",
+      "Led tradeshow marketing strategy across North America in material handling and logistics, anchored by an interactive Hazard Awareness diagnostic at the MODEX 2026 booth that turned booth visits into first-party data, generating 1,000+ leads across trade shows and conferences.",
     ],
-    prev: { href: "/work/landmark-africa", label: "Landmark Africa" },
     next: { href: "/work/alerzo", label: "Alerzo" },
   },
   alerzo: {
@@ -257,16 +261,15 @@ export const caseStudies: Record<string, CaseStudy> = {
       { name: "Reckitt", src: "/logos/clients/reckitt.jpg" },
     ],
     tactics: [
-      "Co-authored the Seven Up and Alerzo Growth Strategy (October 2023), turning a 200,000+ retailer network and its purchase data into a growth channel for a major beverage manufacturer",
-      "Designed a three-month, fully measured campaign calendar: bulk-order incentives, in-app advertising, tiered loyalty, a top-200 retailer leaderboard, and SMS/social pushes",
-      "Applied RFM segmentation and cohort analysis — anchored by the branded 'Heroes' active-retailer rewards tier — to identify high-value customer segments and optimize assortment and basket composition, lifting repeat-purchase rate by 24% and average basket volumes by 30%, while retailer retention rose 66%→68% and churn fell 33%→32% in a single quarter",
-      "Fed a monthly fast-mover/slow-mover product classification into pricing, delisting, and promotional decisions — the same discipline behind bundle-style promotions like the Back-to-School cereal-carton incentive and Self-Pickup Center rollout the brand still runs today",
-      "Secured commercial partnerships with leading CPG manufacturers — including Flour Mills and UAC Foods via a Zeebly ERP integration — delivering sell-through analytics that shaped partner procurement decisions, assortment, pricing, and promotion, and rebate structures",
-      "Designed a data-monetization model: a 1% rebate for manufacturer sell-in/sell-out/inventory dashboards, plus paid API access for real-time data sync",
-      "Ran a full-funnel regional activation campaign that generated $1.3M+ in sales within 12 days (7% above forecast) and 5,000+ incremental orders",
-      "Drove 18% YoY category growth across pasta, flour, noodles, and agro-allied SKUs through data-informed category planning",
-      "Led AlerzoShop GTM and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding",
-      "Built a revenue-optimized inventory mix model that contributed to a 15% reduction in stockouts and over 15% lower excess inventory on key lines",
+      "Co-authored the Seven Up and Alerzo Growth Strategy and designed a three-month campaign calendar with bulk-order incentives, in-app advertising, tiered loyalty, a top-200 retailer leaderboard, and SMS/social pushes, turning a 200,000+ retailer network into a growth channel for a major beverage manufacturer.",
+      "Applied RFM segmentation and cohort analysis, built around the 'Heroes' active-retailer rewards tier, to optimize assortment and basket composition, lifting repeat-purchase rate by 24% and basket volumes by 30%, while retailer retention rose from 66% to 68% and churn fell from 33% to 32% in a single quarter.",
+      "Built a monthly fast-mover/slow-mover product classification model to guide pricing, delisting, and promotional decisions, still in use today behind programs like the Back-to-School cereal-carton incentive and the Self-Pickup Center rollout.",
+      "Secured commercial partnerships with leading CPG manufacturers, including Flour Mills and UAC Foods through a Zeebly ERP integration, and delivered sell-through analytics that shaped partner procurement, pricing, and rebate decisions.",
+      "Designed a data-monetization model combining a 1% rebate on manufacturer sell-in, sell-out, and inventory dashboards with paid API access for real-time data sync.",
+      "Ran a full-funnel regional activation campaign, generating $1.3M+ in sales within 12 days, 7% above forecast, and 5,000+ incremental orders.",
+      "Drove 18% YoY category growth across pasta, flour, noodles, and agro-allied SKUs through data-informed category planning.",
+      "Led AlerzoShop go-to-market and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding.",
+      "Built a revenue-optimized inventory mix model that cut stockouts by 15% and reduced excess inventory by more than 15% on key lines.",
     ],
     prev: { href: "/work/laserglow", label: "Laserglow" },
     next: { href: "/work/landmark-africa", label: "Landmark Africa" },
@@ -296,18 +299,18 @@ export const caseStudies: Record<string, CaseStudy> = {
       { name: "UMG", src: "/logos/clients/umg.png" },
       { name: "CrossBoundary", src: "/logos/clients/crossboundary.jpeg" },
       { name: "Spur Steak Ranches", src: "/logos/clients/spur.png" },
+      { name: "KFC", src: "/logos/clients/kfc.png" },
     ],
     tactics: [
-      "Built a repeatable footfall measurement system combining pedestrian and vehicle counts (with average occupancy per car) into a weekly, location-level view of traffic",
-      "Broke traffic down by asset — exhibition halls, beach, cinema, hotel, restaurants — so each could be valued on its own footfall",
-      "Flagged data-quality issues transparently in reporting (e.g. an inactive counter during a power outage) to keep numbers honest for decision-makers",
-      "Used that traffic evidence to support leasing, sponsorship, and advertising pitches to partners including Access Bank, Fidelity, Stanbic, and Mastercard",
-      "Ran full-funnel digital acquisition campaigns (Google Search, Facebook Lead Ads, Instagram Stories) for Landmark Waterview Apartments, using MEDDPICC-based lead qualification and buyer personas to convert high-net-worth buyer interest into a multi-million-dollar pre-sales pipeline",
-      "Secured anchor tenants across commercial, F&B, and QSR categories — including PwC, Johnson & Johnson, KFC, and Hard Rock Café — contributing to 86% average occupancy",
-      "Grew weekly destination footfall 3.6× (55,000 to 200,000) through inbound marketing, brand activations, and an experience-led content strategy",
-      "Used sales-based lease agreements to align tenant success with property performance, lifting rental margins by 10%",
+      "Led business development across Landmark's full ecosystem, spanning residential, retail, F&B, and hospitality, prospecting and qualifying tenants, partners, and buyers for each vertical",
+      "Closed anchor tenant deals across professional services, F&B, and lifestyle retail, aligning each brand to the concept and audience it served best",
+      "Built the footfall and traffic data behind every pitch, giving prospects verified numbers rather than sales projections",
+      "Sold advertising and sponsorship partnerships to banking and financial services partners, closing deals on the strength of that data",
+      "Led sales for an off-plan apartment development, closing 30 units across 1-bed to 3-bed layouts through a qualified, high-net-worth pipeline",
+      "Led sales for a multi-story high-rise development, managing the deal from first contact through signed contract",
+      "Qualified leads using MEDDPICC ahead of negotiation, focusing effort on deals ready to close",
+      "Negotiated sales-based lease agreements that tied tenant success to property performance, strengthening retention and renewal",
     ],
     prev: { href: "/work/alerzo", label: "Alerzo" },
-    next: { href: "/work/laserglow", label: "Laserglow" },
   },
 };
