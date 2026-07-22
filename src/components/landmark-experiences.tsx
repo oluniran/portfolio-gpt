@@ -33,7 +33,7 @@ export function LandmarkExperiences({ experiences }: { experiences: LandmarkExpe
                 <span className="experience-portfolio-index">{String(index + 1).padStart(2, "0")}</span>
                 <span className="experience-portfolio-heading">
                   <span className="experience-portfolio-name">{experience.name}</span>
-                  <span className="experience-portfolio-tag">{experience.tag}</span>
+                  <span className={`experience-portfolio-tag${experience.slug === "kids-club" ? " experience-portfolio-tag--plain" : ""}`}>{experience.tag}</span>
                 </span>
                 <svg className="experience-item-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                   <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
