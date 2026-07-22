@@ -172,11 +172,11 @@ export type ExternalCaseStudy = { title: string; company: string; location?: str
 export type LandmarkExperience = {
   slug: string;
   name: string;
-  tagline: string;
+  tag: string;
   image: string;
   href: string;
-  // DRAFT — placeholder contributions, confirm/edit before this ever ships publicly.
-  contributions: string[];
+  // DRAFT — placeholder summary, confirm/edit before this ever ships publicly.
+  summary: string;
 };
 
 export type CaseStudy = {
@@ -317,62 +317,42 @@ export const caseStudies: Record<string, CaseStudy> = {
       {
         slug: "kids-club",
         name: "Landmark Kids' Club",
-        tagline: "Kids' membership and entertainment club",
+        tag: "Family & Leisure",
         image: "/design/images/landmark-experiences/kids-club.jpg",
         href: "http://kids.landmarkafrica.com",
-        contributions: [
-          "Positioned Kids' Club as a standalone membership product for the family/leisure audience segment",
-          "Coordinated cross-team execution for family programming and events that drove membership sign-ups",
-          "Used the ecosystem's weekly visitor and footfall data to justify continued investment in family-focused activation",
-        ],
+        summary: "Positioned Kids' Club as a standalone membership product for the family/leisure audience segment.",
       },
       {
         slug: "hotels",
         name: "Landmark Hotels",
-        tagline: "Mixed-use hospitality: apartments, hotel, boulevard rooms, beach resort",
+        tag: "Hospitality",
         image: "/design/images/landmark-experiences/hotels.jpeg",
         href: "https://landmarkhotel.ng/",
-        contributions: [
-          "Sold advertising and sponsorship partnerships with hospitality tie-ins across the hotel, apartments, and beach resort",
-          "Supported occupancy-driving initiatives across room categories",
-          "Negotiated F&B and retail partner agreements that fed foot traffic into the hospitality side of the property",
-        ],
+        summary: "Sold advertising and sponsorship partnerships with hospitality tie-ins across the hotel, apartments, and beach resort.",
       },
       {
         slug: "waterview",
         name: "Landmark Waterview",
-        tagline: "Off-plan waterfront apartments",
+        tag: "Residential",
         image: "/design/images/landmark-experiences/waterview.png",
         href: "https://landmarkwaterview.com/",
-        contributions: [
-          "Led sales for the off-plan apartment development, closing 30 units across 1-bed to 3-bed layouts through a qualified, high-net-worth pipeline",
-          "Led sales for the multi-story high-rise development, from first contact through signed contract",
-          "Qualified leads using MEDDPICC to prioritize deals ready to close",
-        ],
+        summary: "Led sales for the off-plan apartment development, closing 30 units across 1-bed to 3-bed layouts.",
       },
       {
         slug: "upside-down-house",
         name: "Landmark Upside Down House",
-        tagline: "West Africa's first upside-down house attraction",
+        tag: "Attraction",
         image: "/design/images/landmark-experiences/upside-down-house.jpg",
         href: "https://upsidedownhouse.ng/",
-        contributions: [
-          "Positioned the attraction as a flagship differentiator in ecosystem marketing and press",
-          "Supported partner and sponsorship conversations that leveraged the attraction's visibility",
-          "Used footfall data to demonstrate the attraction's pull for prospective tenants and partners",
-        ],
+        summary: "Positioned the attraction as a flagship differentiator in ecosystem marketing and press.",
       },
       {
         slug: "events",
         name: "Landmark Events",
-        tagline: "Events and activations venue",
+        tag: "Events",
         image: "/design/images/landmark-experiences/events.jpg",
         href: "https://event.landmarkafrica.com/",
-        contributions: [
-          "Sold event and activation partnerships to brand and sponsor partners across Landmark locations",
-          "Coordinated with venue operations to qualify and close event bookings",
-          "Used past-event footfall and engagement data to pitch future activations",
-        ],
+        summary: "Sold event and activation partnerships to brand and sponsor partners across Landmark locations.",
       },
     ],
     tactics: [
