@@ -179,6 +179,14 @@ export type LandmarkExperience = {
   summary: string;
 };
 
+export type ProjectTile = {
+  slug: string;
+  title: string;
+  description: string;
+  image: { src: string; alt: string };
+  tag: string;
+};
+
 export type CaseStudy = {
   brand: "laserglow" | "alerzo" | "landmark";
   name: string;
@@ -190,7 +198,8 @@ export type CaseStudy = {
   clientLogos?: ClientLogo[];
   externalCaseStudies?: ExternalCaseStudy[];
   experiences?: LandmarkExperience[];
-  tactics: string[];
+  projects?: ProjectTile[];
+  tactics?: string[];
   closingLine?: { pre: string; emphasis: string };
   prev?: { href: string; label: string };
   next?: { href: string; label: string };
@@ -270,16 +279,55 @@ export const caseStudies: Record<string, CaseStudy> = {
       { name: "Diageo", src: "/logos/clients/diageo.png" },
       { name: "Reckitt", src: "/logos/clients/reckitt.jpg" },
     ],
-    tactics: [
-      "Co-authored the Seven Up and Alerzo Growth Strategy and designed a three-month campaign calendar with bulk-order incentives, in-app advertising, tiered loyalty, a top-200 retailer leaderboard, and SMS/social pushes, turning a 200,000+ retailer network into a growth channel for a major beverage manufacturer.",
-      "Applied RFM segmentation and cohort analysis, built around the 'Heroes' active-retailer rewards tier, to optimize assortment and basket composition, lifting repeat-purchase rate by 24% and basket volumes by 30%, while retailer retention rose from 66% to 68% and churn fell from 33% to 32% in a single quarter.",
-      "Built a monthly fast-mover/slow-mover product classification model to guide pricing, delisting, and promotional decisions, still in use today behind programs like the Back-to-School cereal-carton incentive and the Self-Pickup Center rollout.",
-      "Secured commercial partnerships with leading CPG manufacturers, including Flour Mills and UAC Foods through a Zeebly ERP integration, and delivered sell-through analytics that shaped partner procurement, pricing, and rebate decisions.",
-      "Designed a data-monetization model combining a 1% rebate on manufacturer sell-in, sell-out, and inventory dashboards with paid API access for real-time data sync.",
-      "Ran a full-funnel regional activation campaign, generating $1.3M+ in sales within 12 days, 7% above forecast, and 5,000+ incremental orders.",
-      "Drove 18% YoY category growth across pasta, flour, noodles, and agro-allied SKUs through data-informed category planning.",
-      "Led AlerzoShop go-to-market and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding.",
-      "Built a revenue-optimized inventory mix model that cut stockouts by 15% and reduced excess inventory by more than 15% on key lines.",
+    projects: [
+      {
+        slug: "alerzoshop-gtm",
+        title: "AlerzoShop Go-To-Market",
+        description:
+          "Led AlerzoShop go-to-market and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding.",
+        image: { src: "/design/images/alerzo-gallery-section-0.jpg", alt: "AlerzoShop platform" },
+        tag: "Platform Launch",
+      },
+      {
+        slug: "sevenup-growth-campaign",
+        title: "Seven-Up Growth Campaign",
+        description:
+          "Co-authored a three-month campaign calendar with bulk-order incentives and a top-200 retailer leaderboard, turning a 200,000+ retailer network into a growth channel for a major beverage manufacturer.",
+        image: { src: "/design/images/alerzo-gallery-section-2.jpg", alt: "Seven-Up growth campaign" },
+        tag: "Brand Partnership",
+      },
+      {
+        slug: "heroes-loyalty-program",
+        title: "Heroes Loyalty Program",
+        description:
+          "Built the 'Heroes' active-retailer rewards tier on RFM segmentation, lifting repeat-purchase rate 24% and basket volumes 30% in a single quarter.",
+        image: { src: "/design/images/alerzo-warehouse-delivery.jpeg", alt: "Heroes loyalty program" },
+        tag: "Retention and Loyalty",
+      },
+      {
+        slug: "category-intelligence-model",
+        title: "Category Intelligence Model",
+        description:
+          "Built a fast-mover/slow-mover classification model that still drives pricing and promo decisions today, powering programs like the Back-to-School incentive and 18% YoY category growth across pasta, flour, and noodles.",
+        image: { src: "/design/images/alerzoshop-1.jpg", alt: "Category intelligence model" },
+        tag: "Category Management",
+      },
+      {
+        slug: "manufacturer-data-partnerships",
+        title: "Manufacturer Data Partnerships",
+        description:
+          "Secured ERP-integrated partnerships with Flour Mills and UAC Foods, then built a data-monetization model pairing sell-through dashboards with paid API access.",
+        image: { src: "/design/images/alerzoshop-2.avif", alt: "Manufacturer data partnerships" },
+        tag: "Partnerships and Data",
+      },
+      {
+        slug: "regional-activation-campaign",
+        title: "Regional Activation Campaign",
+        description:
+          "Ran a full-funnel regional activation generating $1.3M+ in sales within 12 days, 7% above forecast.",
+        image: { src: "/design/images/alerzo-project-item-body-section-0.png", alt: "Regional activation campaign" },
+        tag: "Field Activation",
+      },
     ],
     prev: { href: "/work/laserglow", label: "Laserglow" },
     next: { href: "/work/landmark-africa", label: "Landmark Africa" },
