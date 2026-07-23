@@ -169,22 +169,15 @@ export const about = {
 export type CaseStudyMetric = { value: string; label: string };
 export type ClientLogo = { name: string; src: string };
 export type ExternalCaseStudy = { title: string; company: string; location?: string; href: string; image?: string };
-export type LandmarkExperience = {
+export type PortfolioExperience = {
   slug: string;
   name: string;
   tag: string;
   image: string;
-  href: string;
+  gallery?: string[];
+  href?: string;
   // DRAFT — placeholder summary, confirm/edit before this ever ships publicly.
   summary: string;
-};
-
-export type ProjectTile = {
-  slug: string;
-  title: string;
-  description: string;
-  image: { src: string; alt: string };
-  tag: string;
 };
 
 export type CaseStudy = {
@@ -197,8 +190,8 @@ export type CaseStudy = {
   callout?: string;
   clientLogos?: ClientLogo[];
   externalCaseStudies?: ExternalCaseStudy[];
-  experiences?: LandmarkExperience[];
-  projects?: ProjectTile[];
+  experiences?: PortfolioExperience[];
+  heroGallery?: string[];
   tactics?: string[];
   closingLine?: { pre: string; emphasis: string };
   prev?: { href: string; label: string };
@@ -264,6 +257,25 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     callout:
       "Growth compounds when the product mix, the promotion, and the retailer's next order all point in the same direction.",
+    heroGallery: [
+      "/design/images/alerzo-hero-revolve-01.jpg",
+      "/design/images/alerzo-hero-revolve-02.jpg",
+      "/design/images/alerzo-hero-revolve-03.jpg",
+      "/design/images/alerzo-hero-revolve-04.jpg",
+      "/design/images/alerzo-hero-revolve-05.jpg",
+      "/design/images/alerzo-hero-revolve-06.jpg",
+      "/design/images/alerzo-hero-revolve-07.jpg",
+      "/design/images/alerzo-hero-revolve-08.jpg",
+      "/design/images/alerzo-hero-revolve-09.jpg",
+      "/design/images/alerzo-hero-revolve-10.jpg",
+      "/design/images/alerzo-hero-revolve-11.jpg",
+      "/design/images/alerzo-hero-revolve-12.jpg",
+      "/design/images/alerzo-hero-revolve-13.jpg",
+      "/design/images/alerzo-hero-revolve-14.jpg",
+      "/design/images/alerzo-gallery-section-0.jpg",
+      "/design/images/alerzo-gallery-section-2.jpg",
+      "/design/images/alerzoshop-1.jpg",
+    ],
     clientLogos: [
       { name: "Golden Penny (Flour Mills of Nigeria)", src: "/logos/clients/golden-penny-fmn.jpg" },
       { name: "Indomie (Multipro)", src: "/logos/clients/indomie-multipro.png" },
@@ -279,54 +291,84 @@ export const caseStudies: Record<string, CaseStudy> = {
       { name: "Diageo", src: "/logos/clients/diageo.png" },
       { name: "Reckitt", src: "/logos/clients/reckitt.jpg" },
     ],
-    projects: [
+    experiences: [
       {
-        slug: "alerzoshop-gtm",
-        title: "AlerzoShop Go-To-Market",
-        description:
-          "Led AlerzoShop go-to-market and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding.",
-        image: { src: "/design/images/alerzo-gallery-section-0.jpg", alt: "AlerzoShop platform" },
+        slug: "alerzo-gtm",
+        name: "Alerzo Go-To-Market",
         tag: "Platform Launch",
+        image: "/design/images/alerzo-gallery-section-0.jpg",
+        gallery: [
+          "/design/images/alerzo-gallery-section-0.jpg",
+          "/design/images/alerzo-gallery-section-1.jpg",
+          "/design/images/alerzoshop-1.jpg",
+        ],
+        summary:
+          "Led AlerzoShop go-to-market and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding.",
       },
       {
-        slug: "sevenup-growth-campaign",
-        title: "Seven-Up Growth Campaign",
-        description:
-          "Co-authored a three-month campaign calendar with bulk-order incentives and a top-200 retailer leaderboard, turning a 200,000+ retailer network into a growth channel for a major beverage manufacturer.",
-        image: { src: "/design/images/alerzo-gallery-section-2.jpg", alt: "Seven-Up growth campaign" },
+        slug: "growth-campaigns",
+        name: "Growth Campaigns",
         tag: "Brand Partnership",
+        image: "/design/images/alerzo-gallery-section-2.jpg",
+        gallery: [
+          "/design/images/alerzo-gallery-section-2.jpg",
+          "/design/images/alerzo-gallery-section-0.jpg",
+          "/design/images/alerzo-project-item-body-section-0.png",
+        ],
+        summary:
+          "Co-authored the Seven-Up Growth Strategy and a three-month campaign calendar with bulk-order incentives and a top-200 retailer leaderboard, then ran a full-funnel regional activation that generated $1.3M+ in sales within 12 days, 7% above forecast.",
       },
       {
         slug: "heroes-loyalty-program",
-        title: "Heroes Loyalty Program",
-        description:
-          "Built the 'Heroes' active-retailer rewards tier on RFM segmentation, lifting repeat-purchase rate 24% and basket volumes 30% in a single quarter.",
-        image: { src: "/design/images/alerzo-warehouse-delivery.jpeg", alt: "Heroes loyalty program" },
+        name: "Heroes Loyalty Program",
         tag: "Retention and Loyalty",
+        image: "/design/images/alerzo-warehouse-delivery.jpeg",
+        gallery: [
+          "/design/images/alerzo-warehouse-delivery.jpeg",
+          "/design/images/alerzo-gallery-section-1.jpg",
+          "/design/images/alerzoshop-2.avif",
+        ],
+        summary:
+          "Built the 'Heroes' active-retailer rewards tier on RFM segmentation, lifting repeat-purchase rate 24% and basket volumes 30% in a single quarter.",
       },
       {
         slug: "category-intelligence-model",
-        title: "Category Intelligence Model",
-        description:
-          "Built a fast-mover/slow-mover classification model that still drives pricing and promo decisions today, powering programs like the Back-to-School incentive and 18% YoY category growth across pasta, flour, and noodles.",
-        image: { src: "/design/images/alerzoshop-1.jpg", alt: "Category intelligence model" },
+        name: "Category Intelligence Model",
         tag: "Category Management",
+        image: "/design/images/alerzoshop-1.jpg",
+        gallery: [
+          "/design/images/alerzoshop-1.jpg",
+          "/design/images/alerzo-gallery-section-2.jpg",
+          "/design/images/alerzo-project-item-body-section-1.png",
+        ],
+        summary:
+          "Built a fast-mover/slow-mover classification model that still drives pricing and promo decisions today, powering programs like the Back-to-School incentive and 18% YoY category growth across pasta, flour, and noodles.",
       },
       {
-        slug: "manufacturer-data-partnerships",
-        title: "Manufacturer Data Partnerships",
-        description:
-          "Secured ERP-integrated partnerships with Flour Mills and UAC Foods, then built a data-monetization model pairing sell-through dashboards with paid API access.",
-        image: { src: "/design/images/alerzoshop-2.avif", alt: "Manufacturer data partnerships" },
+        slug: "joint-business-planning",
+        name: "Joint Business Planning",
         tag: "Partnerships and Data",
+        image: "/design/images/alerzoshop-2.avif",
+        gallery: [
+          "/design/images/alerzoshop-2.avif",
+          "/design/images/alerzo-warehouse-delivery.jpeg",
+          "/design/images/alerzo-gallery-section-0.jpg",
+        ],
+        summary:
+          "Secured ERP-integrated partnerships with Flour Mills and UAC Foods, then built a data-monetization model pairing sell-through dashboards with paid API access to shape joint pricing, procurement, and rebate decisions.",
       },
       {
-        slug: "regional-activation-campaign",
-        title: "Regional Activation Campaign",
-        description:
-          "Ran a full-funnel regional activation generating $1.3M+ in sales within 12 days, 7% above forecast.",
-        image: { src: "/design/images/alerzo-project-item-body-section-0.png", alt: "Regional activation campaign" },
-        tag: "Field Activation",
+        slug: "payments-financial-inclusion",
+        name: "Payments and Financial Inclusion",
+        tag: "Payments and Fintech",
+        image: "/design/images/alerzo-project-item-body-section-1.png",
+        gallery: [
+          "/design/images/alerzo-project-item-body-section-1.png",
+          "/design/images/alerzo-project-item-body-section-0.png",
+          "/design/images/alerzoshop-1.jpg",
+        ],
+        summary:
+          "Extended fintech and micro-finance-bank partnerships that unlocked $6M+ in retailer deposits, while scaling Smart POS terminal deployment to 7,000+ devices processing $17M+ in monthly transaction volume.",
       },
     ],
     prev: { href: "/work/laserglow", label: "Laserglow" },
