@@ -9,9 +9,9 @@ export function SiteNav() {
       <div className="nav-item-dropdown">
         <Link href="/work">Work</Link>
         <div className="nav-dropdown-panel">
-          <Link href="/work/laserglow">Laserglow Technologies</Link>
-          <Link href="/work/alerzo">Alerzo</Link>
-          <Link href="/work/landmark-africa">Landmark Africa</Link>
+          <Link className="nav-dropdown-link--laserglow" href="/work/laserglow">Laserglow Technologies</Link>
+          <Link className="nav-dropdown-link--alerzo" href="/work/alerzo">Alerzo</Link>
+          <Link className="nav-dropdown-link--landmark" href="/work/landmark-africa">Landmark Africa</Link>
         </div>
       </div>
     </nav>
