@@ -93,6 +93,7 @@ a { color: inherit; text-decoration: none; }
 .alerzo-hero-row:hover .alerzo-hero-row-track { animation-play-state:paused; }
 .alerzo-hero-row-track img { height:11rem; width:auto; border:1px solid var(--scheme-border); }
 .case-alerzo-tight { padding-top:2rem; padding-bottom:2rem; }
+.case-partners-tight-top { padding-top:2rem; }
 @media (min-width:768px) { .alerzo-hero-row-track img { height:14rem; } }
 @media (prefers-reduced-motion:reduce) { .alerzo-hero-row-track { animation:none; } }
 .edu-list { margin-top:2.5rem; border-top:var(--border-width) solid var(--scheme-border); }
