@@ -169,6 +169,15 @@ export const about = {
 export type CaseStudyMetric = { value: string; label: string };
 export type ClientLogo = { name: string; src: string };
 export type ExternalCaseStudy = { title: string; company: string; location?: string; href: string; image?: string };
+export type LandmarkExperience = {
+  slug: string;
+  name: string;
+  tag: string;
+  image: string;
+  href: string;
+  // DRAFT — placeholder summary, confirm/edit before this ever ships publicly.
+  summary: string;
+};
 
 export type CaseStudy = {
   brand: "laserglow" | "alerzo" | "landmark";
@@ -180,6 +189,7 @@ export type CaseStudy = {
   callout?: string;
   clientLogos?: ClientLogo[];
   externalCaseStudies?: ExternalCaseStudy[];
+  experiences?: LandmarkExperience[];
   tactics: string[];
   closingLine?: { pre: string; emphasis: string };
   prev?: { href: string; label: string };
@@ -190,7 +200,7 @@ export const caseStudies: Record<string, CaseStudy> = {
   laserglow: {
     brand: "laserglow",
     name: "Laserglow Technologies",
-    role: "Performance Marketing Manager · Toronto, ON",
+    role: "Performance Marketing Manager, Toronto, ON",
     dates: "January 2026 – Present",
     intro:
       "Laserglow Technologies is a Toronto-based industrial safety company that develops LED-based visual hazard management systems for warehouses and manufacturing facilities, helping industrial teams replace static safety controls like paint and tape with dynamic, projected solutions.",
@@ -300,6 +310,50 @@ export const caseStudies: Record<string, CaseStudy> = {
       { name: "CrossBoundary", src: "/logos/clients/crossboundary.jpeg" },
       { name: "Spur Steak Ranches", src: "/logos/clients/spur.png" },
       { name: "KFC", src: "/logos/clients/kfc.png" },
+    ],
+    // DRAFT — contributions below are plausible placeholders grounded in the real tactics/metrics
+    // above, NOT verified per-experience facts. Confirm/edit before this ever ships publicly.
+    experiences: [
+      {
+        slug: "kids-club",
+        name: "Landmark Kids' Club",
+        tag: "Family & Leisure",
+        image: "/design/images/landmark-experiences/kids-club.jpg",
+        href: "http://kids.landmarkafrica.com",
+        summary: "Positioned Kids' Club as a standalone membership product for the family/leisure audience segment.",
+      },
+      {
+        slug: "hotels",
+        name: "Landmark Hotels",
+        tag: "Hospitality",
+        image: "/design/images/landmark-experiences/hotels.jpeg",
+        href: "https://landmarkhotel.ng/",
+        summary: "Sold advertising and sponsorship partnerships with hospitality tie-ins across the hotel, apartments, and beach resort.",
+      },
+      {
+        slug: "waterview",
+        name: "Landmark Waterview",
+        tag: "Residential",
+        image: "/design/images/landmark-experiences/waterview.png",
+        href: "https://landmarkwaterview.com/",
+        summary: "Led sales for the off-plan apartment development, closing 30 units across 1-bed to 3-bed layouts.",
+      },
+      {
+        slug: "upside-down-house",
+        name: "Landmark Upside Down House",
+        tag: "Attraction",
+        image: "/design/images/landmark-experiences/upside-down-house.jpg",
+        href: "https://upsidedownhouse.ng/",
+        summary: "Positioned the attraction as a flagship differentiator in ecosystem marketing and press.",
+      },
+      {
+        slug: "events",
+        name: "Landmark Events",
+        tag: "Events",
+        image: "/design/images/landmark-experiences/events.jpg",
+        href: "https://event.landmarkafrica.com/",
+        summary: "Sold event and activation partnerships to brand and sponsor partners across Landmark locations.",
+      },
     ],
     tactics: [
       "Led business development across Landmark's full ecosystem, spanning residential, retail, F&B, and hospitality, prospecting and qualifying tenants, partners, and buyers for each vertical",
