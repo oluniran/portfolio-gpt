@@ -24,9 +24,9 @@ const galleryHeading: Record<CaseStudy["brand"], string> = {
 
 export function CaseStudyPage({ data }: { data: CaseStudy }) {
   const media = visual[data.brand];
-  const heroText = <><h1 className="display">{data.name}</h1><p className="subheading">{data.role}</p><p className="eyebrow" style={{ marginTop: ".6rem" }}>{data.dates}</p><p className="lede" style={{ marginTop: "1.75rem" }}>{data.intro}</p></>;
+  const heroText = <><h1 className="display case-hero-name">{data.name}</h1><p className="subheading">{data.role}</p><p className="eyebrow" style={{ marginTop: ".6rem" }}>{data.dates}</p><p className="lede" style={{ marginTop: "1.75rem" }}>{data.intro}</p></>;
   return <article className={brandClass[data.brand]}>
-    <section className={`site-section ${media.heroScheme}`}><div className="container case-hero"><div>{heroText}</div><Image src={media.main} alt="" width={1400} height={1000} sizes="(min-width: 768px) 45vw, 100vw" priority /></div></section>
+    <section className={`site-section ${media.heroScheme}`}><div className="container case-hero"><div className="case-hero-copy">{heroText}</div><Image src={media.main} alt="" width={1400} height={1000} sizes="(min-width: 768px) 45vw, 100vw" priority /></div></section>
     <section className={`site-section ${media.detailScheme}`}><div className="container"><p className="eyebrow eyebrow--section">Key Achievements</p><div className="case-metrics">{data.metrics.map((metric) => <div className="case-metric" key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div></div></section>
     {!data.experiences ? <section className="site-section scheme-2"><div className="container case-content"><div><p className="eyebrow eyebrow--section">Projects and Workstreams</p></div><ul className="tactics">{data.tactics.map((tactic) => <li key={tactic}>{tactic}</li>)}</ul></div></section> : null}
     {data.experiences ? <section className="site-section scheme-2"><div className="container"><p className="eyebrow eyebrow--section">Projects and Workstreams</p><LandmarkExperiences experiences={data.experiences} /></div></section> : null}
