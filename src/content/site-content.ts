@@ -200,7 +200,7 @@ export const caseStudies: Record<string, CaseStudy> = {
   laserglow: {
     brand: "laserglow",
     name: "Laserglow Technologies",
-    role: "Performance Marketing Manager · Toronto, ON",
+    role: "Performance Marketing Manager, Toronto, ON",
     dates: "January 2026 – Present",
     intro:
       "Laserglow Technologies is a Toronto-based industrial safety company that develops LED-based visual hazard management systems for warehouses and manufacturing facilities, helping industrial teams replace static safety controls like paint and tape with dynamic, projected solutions.",
