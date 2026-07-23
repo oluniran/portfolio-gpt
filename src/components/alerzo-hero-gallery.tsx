@@ -1,6 +1,8 @@
 import Image from "next/image";
 
-export function AlerzoHeroGallery({ images }: { images: string[] }) {
+type HeroImage = { src: string; width: number; height: number };
+
+export function AlerzoHeroGallery({ images }: { images: HeroImage[] }) {
   const mid = Math.ceil(images.length / 2);
   const rowA = images.slice(0, mid);
   const rowB = images.slice(mid);
@@ -10,11 +12,11 @@ export function AlerzoHeroGallery({ images }: { images: string[] }) {
       {[rowA, rowB].map((row, rowIndex) => (
         <div className={`alerzo-hero-row${rowIndex === 1 ? " alerzo-hero-row--reverse" : ""}`} key={rowIndex}>
           <div className="alerzo-hero-row-track">
-            {row.map((src) => (
-              <Image src={src} alt="" width={480} height={360} key={src} />
+            {row.map((image) => (
+              <Image src={image.src} alt="" width={image.width} height={image.height} key={image.src} />
             ))}
-            {row.map((src) => (
-              <Image src={src} alt="" aria-hidden width={480} height={360} key={`${src}-repeat`} />
+            {row.map((image) => (
+              <Image src={image.src} alt="" aria-hidden width={image.width} height={image.height} key={`${image.src}-repeat`} />
             ))}
           </div>
         </div>

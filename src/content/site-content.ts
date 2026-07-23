@@ -191,7 +191,7 @@ export type CaseStudy = {
   clientLogos?: ClientLogo[];
   externalCaseStudies?: ExternalCaseStudy[];
   experiences?: PortfolioExperience[];
-  heroGallery?: string[];
+  heroGallery?: { src: string; width: number; height: number }[];
   tactics?: string[];
   closingLine?: { pre: string; emphasis: string };
   prev?: { href: string; label: string };
@@ -258,23 +258,23 @@ export const caseStudies: Record<string, CaseStudy> = {
     callout:
       "Growth compounds when the product mix, the promotion, and the retailer's next order all point in the same direction.",
     heroGallery: [
-      "/design/images/alerzo-hero-revolve-01.jpg",
-      "/design/images/alerzo-hero-revolve-02.jpg",
-      "/design/images/alerzo-hero-revolve-03.jpg",
-      "/design/images/alerzo-hero-revolve-04.jpg",
-      "/design/images/alerzo-hero-revolve-05.jpg",
-      "/design/images/alerzo-hero-revolve-06.jpg",
-      "/design/images/alerzo-hero-revolve-07.jpg",
-      "/design/images/alerzo-hero-revolve-08.jpg",
-      "/design/images/alerzo-hero-revolve-09.jpg",
-      "/design/images/alerzo-hero-revolve-10.jpg",
-      "/design/images/alerzo-hero-revolve-11.jpg",
-      "/design/images/alerzo-hero-revolve-12.jpg",
-      "/design/images/alerzo-hero-revolve-13.jpg",
-      "/design/images/alerzo-hero-revolve-14.jpg",
-      "/design/images/alerzo-gallery-section-0.jpg",
-      "/design/images/alerzo-gallery-section-2.jpg",
-      "/design/images/alerzoshop-1.jpg",
+      { src: "/design/images/alerzo-hero-revolve-01.jpg", width: 819, height: 1024 },
+      { src: "/design/images/alerzo-hero-revolve-02.jpg", width: 819, height: 1024 },
+      { src: "/design/images/alerzo-hero-revolve-03.jpg", width: 2048, height: 2048 },
+      { src: "/design/images/alerzo-hero-revolve-04.jpg", width: 2048, height: 2048 },
+      { src: "/design/images/alerzo-hero-revolve-05.jpg", width: 800, height: 876 },
+      { src: "/design/images/alerzo-hero-revolve-06.jpg", width: 2048, height: 2048 },
+      { src: "/design/images/alerzo-hero-revolve-07.jpg", width: 1080, height: 1080 },
+      { src: "/design/images/alerzo-hero-revolve-08.jpg", width: 1169, height: 790 },
+      { src: "/design/images/alerzo-hero-revolve-09.jpg", width: 1080, height: 1080 },
+      { src: "/design/images/alerzo-hero-revolve-10.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-11.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-12.jpg", width: 1440, height: 960 },
+      { src: "/design/images/alerzo-hero-revolve-13.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-14.jpg", width: 2001, height: 2002 },
+      { src: "/design/images/alerzo-gallery-section-0.jpg", width: 512, height: 344 },
+      { src: "/design/images/alerzo-gallery-section-2.jpg", width: 1390, height: 926 },
+      { src: "/design/images/alerzoshop-1.jpg", width: 1200, height: 800 },
     ],
     clientLogos: [
       { name: "Golden Penny (Flour Mills of Nigeria)", src: "/logos/clients/golden-penny-fmn.jpg" },
