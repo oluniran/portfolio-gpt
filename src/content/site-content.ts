@@ -371,6 +371,7 @@ export const caseStudies: Record<string, CaseStudy> = {
           "Extended fintech and micro-finance-bank partnerships that unlocked $6M+ in retailer deposits, while scaling Smart POS terminal deployment to 7,000+ devices processing $17M+ in monthly transaction volume.",
       },
     ],
+    closingLine: { pre: "", emphasis: "Serving last-mile retailers everywhere." },
     prev: { href: "/work/laserglow", label: "Laserglow" },
     next: { href: "/work/landmark-africa", label: "Landmark Africa" },
   },
