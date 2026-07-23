@@ -194,6 +194,7 @@ export type CaseStudy = {
   heroGallery?: { src: string; width: number; height: number }[];
   tactics?: string[];
   closingLine?: { pre: string; emphasis: string };
+  videoEmbed?: { youtubeId: string };
   prev?: { href: string; label: string };
   next?: { href: string; label: string };
 };
@@ -372,6 +373,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       },
     ],
     closingLine: { pre: "", emphasis: "Serving last-mile retailers everywhere." },
+    videoEmbed: { youtubeId: "h_tG--FTo1Y" },
     prev: { href: "/work/laserglow", label: "Laserglow" },
     next: { href: "/work/landmark-africa", label: "Landmark Africa" },
   },
