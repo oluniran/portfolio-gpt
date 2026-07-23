@@ -10,7 +10,9 @@ export function LandmarkExperiences({ experiences }: { experiences: LandmarkExpe
 
   return (
     <div className="experience-portfolio" onMouseLeave={() => setHoveredIndex(null)}>
-      <ul className="experience-portfolio-list">
+      <div className="experience-portfolio-list-wrap">
+        <div className="experience-portfolio-backdrop" aria-hidden="true" />
+        <ul className="experience-portfolio-list">
         {experiences.map((experience, index) => {
           const isOpen = openSlug === experience.slug;
           const isDimmed = hoveredIndex !== null && hoveredIndex !== index;
@@ -55,7 +57,8 @@ export function LandmarkExperiences({ experiences }: { experiences: LandmarkExpe
             </li>
           );
         })}
-      </ul>
+        </ul>
+      </div>
     </div>
   );
 }

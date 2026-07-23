@@ -172,7 +172,9 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 560px) { .nav-links a:not(:first-child),.nav-links .nav-dropdown-panel { display:none !important; }.case-metrics,.case-laserglow .case-metrics,.case-alerzo .case-metrics,.case-landmark .case-metrics { grid-template-columns:1fr; }.nav-inner { flex-wrap:wrap; row-gap:.5rem; padding-block:.75rem; }.wordmark { font-size:1rem; }.nav-links { padding:.25rem; }.nav-links a { padding:.45rem .7rem; } }
 
 .experience-portfolio { margin-top:2.5rem; }
-.experience-portfolio-list { position:relative; list-style:none; margin:0; padding:0; border-top:var(--border-width) solid var(--scheme-border); }
+.experience-portfolio-list-wrap { position:relative; }
+.experience-portfolio-backdrop { display:none; }
+.experience-portfolio-list { list-style:none; margin:0; padding:0; border-top:var(--border-width) solid var(--scheme-border); }
 .experience-portfolio-row { border-bottom:var(--border-width) solid var(--scheme-border); }
 .experience-portfolio-trigger { position:relative; z-index:2; width:100%; display:flex; flex-wrap:wrap; align-items:center; gap:1.25rem; padding:1.5rem 0; background:none; border:none; color:inherit; font-family:inherit; text-align:left; cursor:pointer; }
 .experience-portfolio-index { font-size:var(--text-h5); font-weight:700; transition:opacity .3s ease; }
@@ -196,6 +198,7 @@ a { color: inherit; text-decoration: none; }
   .experience-portfolio-mobile-image { display:none; }
   .experience-portfolio-row { min-height:6rem; }
   .experience-portfolio-heading { max-width:50%; }
+  .experience-portfolio-backdrop { display:block; position:absolute; top:0; right:0; bottom:0; width:45%; height:100%; background:var(--scheme-bg); pointer-events:none; }
   .experience-portfolio-image-col { display:block; position:absolute; top:0; right:0; bottom:0; width:45%; height:100%; padding-left:2.5rem; pointer-events:none; overflow:hidden; }
   .experience-portfolio-image-inner { position:sticky; top:2rem; height:100%; max-height:60vh; overflow:hidden; opacity:0; transition:opacity .3s ease; }
   .experience-portfolio-image-inner[data-visible="true"] { opacity:1; }
