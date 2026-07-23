@@ -293,7 +293,7 @@ export const caseStudies: Record<string, CaseStudy> = {
       "Landmark Africa Group is a real estate and hospitality company that develops mixed-use properties combining commercial real estate, leisure, retail, and tourism destinations across multiple markets.",
     metrics: [
       { value: "$2M+", label: "Annual revenue generated" },
-      { value: "102,149", label: "Weekly visitors, full ecosystem" },
+      { value: "50,000+", label: "Weekly visitors, full ecosystem" },
       { value: "30+", label: "Events and activations hosted monthly, ecosystem-wide" },
       { value: "86%", label: "Average occupancy across the retail boulevard" },
       { value: "50+", label: "Retail tenants across a diversified category mix" },
