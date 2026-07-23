@@ -294,9 +294,9 @@ export const caseStudies: Record<string, CaseStudy> = {
     metrics: [
       { value: "$2M+", label: "Annual revenue generated" },
       { value: "102,149", label: "Weekly visitors, full ecosystem" },
-      { value: "2,816", label: "Pedestrians counted that week" },
+      { value: "30+", label: "Events and activations hosted monthly, ecosystem-wide" },
       { value: "86%", label: "Average occupancy across the retail boulevard" },
-      { value: "50+", label: "Retail tenants across the ecosystem" },
+      { value: "50+", label: "Retail tenants across a diversified category mix" },
       { value: "30", label: "Off-plan apartments sold (1-bed to 3-bed units)" },
     ],
     callout:
