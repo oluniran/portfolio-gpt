@@ -193,7 +193,7 @@ export type CaseStudy = {
   experiences?: PortfolioExperience[];
   heroGallery?: { src: string; width: number; height: number }[];
   tactics?: string[];
-  closingLine?: { pre: string; emphasis: string };
+  closingLine?: { pre: string; emphasis?: string; rotatingWords?: { text: string; withPrefix?: boolean }[] };
   videoEmbed?: { youtubeId: string };
   prev?: { href: string; label: string };
   next?: { href: string; label: string };
@@ -333,19 +333,6 @@ export const caseStudies: Record<string, CaseStudy> = {
           "Built the 'Heroes' active-retailer rewards tier on RFM segmentation, lifting repeat-purchase rate 24% and basket volumes 30% in a single quarter.",
       },
       {
-        slug: "category-intelligence-model",
-        name: "Category Intelligence Model",
-        tag: "Category Management",
-        image: "/design/images/alerzoshop-1.jpg",
-        gallery: [
-          "/design/images/alerzoshop-1.jpg",
-          "/design/images/alerzo-gallery-section-2.jpg",
-          "/design/images/alerzo-project-item-body-section-1.png",
-        ],
-        summary:
-          "Built a fast-mover/slow-mover classification model that still drives pricing and promo decisions today, powering programs like the Back-to-School incentive and 18% YoY category growth across pasta, flour, and noodles.",
-      },
-      {
         slug: "joint-business-planning",
         name: "Joint Business Planning",
         tag: "Partnerships and Data",
@@ -372,7 +359,17 @@ export const caseStudies: Record<string, CaseStudy> = {
           "Extended fintech and micro-finance-bank partnerships that unlocked $6M+ in retailer deposits, while scaling Smart POS terminal deployment to 7,000+ devices processing $17M+ in monthly transaction volume.",
       },
     ],
-    closingLine: { pre: "", emphasis: "Serving last-mile retailers everywhere." },
+    closingLine: {
+      pre: "Serving last-mile retailers ",
+      rotatingWords: [
+        { text: "efficiently" },
+        { text: "everywhere" },
+        { text: "financial inclusion", withPrefix: true },
+        { text: "payments", withPrefix: true },
+        { text: "inventory management", withPrefix: true },
+        { text: "business management solutions", withPrefix: true },
+      ],
+    },
     videoEmbed: { youtubeId: "h_tG--FTo1Y" },
     prev: { href: "/work/laserglow", label: "Laserglow" },
     next: { href: "/work/landmark-africa", label: "Landmark Africa" },
