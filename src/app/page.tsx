@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-const icons: Record<string, string> = { "GA4": "/icons/ga4.svg", "Google Ads": "/icons/google-ads.svg", "LinkedIn Ads": "/icons/linkedin-ads.svg", "Meta Ads": "/icons/meta-ads.svg", "GTM": "/icons/gtm.svg", "HubSpot": "/icons/hubspot.svg", "Tableau": "/icons/tableau.svg", "DV360": "/icons/dv360.png", "Clay": "/icons/clay.jpeg", "AirOps": "/icons/airops.png", "SA360": "/icons/sa360.png", "TikTok": "/icons/tiktok.svg", "AI": "/icons/ai.webp", "Claude": "/icons/claude.png", "Attio": "/icons/attio.png", "Instagram": "/icons/instagram.png", "YouTube": "/icons/youtube.png", "Klaviyo": "/icons/klaviyo.png" };
+const icons: Record<string, string> = { "GA4": "/icons/ga4.svg", "Google Ads": "/icons/google-ads.svg", "LinkedIn Ads": "/icons/linkedin-ads.svg", "Meta Ads": "/icons/meta-ads.svg", "GTM": "/icons/gtm.svg", "HubSpot": "/icons/hubspot.svg", "Tableau": "/icons/tableau.svg", "DV360": "/icons/dv360.png", "Clay": "/icons/clay.jpeg", "AirOps": "/icons/airops.png", "SA360": "/icons/sa360.png", "TikTok": "/icons/tiktok.svg", "AI": "/icons/ai.webp", "Claude": "/icons/claude.png", "Instagram": "/icons/instagram.png", "YouTube": "/icons/youtube.png" };
 const certificationIcons: Record<string, string> = { "Google Analytics": "/icons/ga4-2.png", "Search Ads 360": "/icons/sa360-2.png", "Display & Video 360": "/icons/dv360.png", "Google Ads Search": "/icons/google-ads-2.avif", "Google Ads Display": "/icons/google-ads-2.avif", "Google Tag Manager": "/icons/gtm-2.png" };
 
 export default function HomePage() { return <>

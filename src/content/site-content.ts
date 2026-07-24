@@ -21,10 +21,8 @@ export const competencies = {
     "HubSpot",
     "Tableau",
     "TikTok",
-    "Attio",
     "Instagram",
     "YouTube",
-    "Klaviyo",
   ],
   performance: [
     "Paid Search",
