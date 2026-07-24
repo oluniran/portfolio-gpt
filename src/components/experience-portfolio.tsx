@@ -94,7 +94,7 @@ function ExperienceRow({
         <div className="experience-item-panel-inner">
           <div className="experience-item-panel-grid">
             <div className="experience-item-panel-text">
-              <span className="experience-portfolio-tag experience-portfolio-tag--plain">{experience.tag}</span>
+              <span className="experience-portfolio-tag experience-portfolio-tag--plain experience-portfolio-tag--panel">{experience.tag}</span>
               <p className="experience-item-summary">{experience.summary}</p>
               {experience.href ? (
                 <a className="button button--accent focus-ring" href={experience.href} target="_blank" rel="noopener noreferrer">
