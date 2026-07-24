@@ -61,40 +61,25 @@ function ExpandedGallery({
 function ExperienceRow({
   experience,
   index,
-  total,
-  isDimmed,
   isOpen,
-  isVisible,
-  onHover,
   onToggle,
 }: {
   experience: PortfolioExperience;
   index: number;
-  total: number;
-  isDimmed: boolean;
   isOpen: boolean;
-  isVisible: boolean;
-  onHover: () => void;
   onToggle: () => void;
 }) {
   const galleryImages = experience.gallery && experience.gallery.length > 0 ? experience.gallery : [experience.image];
   const [galleryIndex, setGalleryIndex] = useState(0);
-  const stickyImage = galleryImages[galleryIndex] ?? experience.image;
   const panelId = `experience-panel-${experience.slug}`;
 
   return (
-    <li className="experience-portfolio-row" data-dimmed={isDimmed} data-open={isOpen}>
-      <div className="experience-portfolio-image-col" aria-hidden="true" style={{ zIndex: total - index }}>
-        <div className="experience-portfolio-image-inner" data-visible={isVisible}>
-          <Image src={stickyImage} alt="" fill sizes="45vw" />
-        </div>
-      </div>
+    <li className="experience-portfolio-row" data-open={isOpen}>
       <button
         type="button"
         className="experience-portfolio-trigger"
         aria-expanded={isOpen}
         aria-controls={panelId}
-        onMouseEnter={onHover}
         onClick={onToggle}
       >
         <span className="experience-portfolio-index">{String(index + 1).padStart(2, "0")}</span>
@@ -107,15 +92,19 @@ function ExperienceRow({
       </button>
       <div className="experience-item-panel" id={panelId} role="region" aria-hidden={!isOpen}>
         <div className="experience-item-panel-inner">
-          <div className="experience-item-panel-content">
-            <span className="experience-portfolio-tag experience-portfolio-tag--plain">{experience.tag}</span>
-            <p className="experience-item-summary">{experience.summary}</p>
-            <ExpandedGallery images={galleryImages} index={galleryIndex} setIndex={setGalleryIndex} />
-            {experience.href ? (
-              <a className="button button--accent focus-ring" href={experience.href} target="_blank" rel="noopener noreferrer">
-                View Project
-              </a>
-            ) : null}
+          <div className="experience-item-panel-grid">
+            <div className="experience-item-panel-text">
+              <span className="experience-portfolio-tag experience-portfolio-tag--plain">{experience.tag}</span>
+              <p className="experience-item-summary">{experience.summary}</p>
+              {experience.href ? (
+                <a className="button button--accent focus-ring" href={experience.href} target="_blank" rel="noopener noreferrer">
+                  View Project
+                </a>
+              ) : null}
+            </div>
+            <div className="experience-item-panel-media">
+              <ExpandedGallery images={galleryImages} index={galleryIndex} setIndex={setGalleryIndex} />
+            </div>
           </div>
         </div>
       </div>
@@ -124,24 +113,18 @@ function ExperienceRow({
 }
 
 export function ExperiencePortfolio({ experiences }: { experiences: PortfolioExperience[] }) {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [openSlug, setOpenSlug] = useState<string | null>(null);
 
   return (
-    <div className="experience-portfolio" onMouseLeave={() => setHoveredIndex(null)}>
+    <div className="experience-portfolio">
       <div className="experience-portfolio-list-wrap">
-        <div className="experience-portfolio-backdrop" aria-hidden="true" />
         <ul className="experience-portfolio-list">
           {experiences.map((experience, index) => (
             <ExperienceRow
               key={experience.slug}
               experience={experience}
               index={index}
-              total={experiences.length}
-              isDimmed={hoveredIndex !== null && hoveredIndex !== index}
               isOpen={openSlug === experience.slug}
-              isVisible={hoveredIndex === index || hoveredIndex === null}
-              onHover={() => setHoveredIndex(index)}
               onToggle={() => setOpenSlug(openSlug === experience.slug ? null : experience.slug)}
             />
           ))}
