@@ -21,6 +21,10 @@ export const competencies = {
     "HubSpot",
     "Tableau",
     "TikTok",
+    "Attio",
+    "Instagram",
+    "YouTube",
+    "Klaviyo",
   ],
   performance: [
     "Paid Search",
@@ -169,12 +173,13 @@ export const about = {
 export type CaseStudyMetric = { value: string; label: string };
 export type ClientLogo = { name: string; src: string };
 export type ExternalCaseStudy = { title: string; company: string; location?: string; href: string; image?: string };
-export type LandmarkExperience = {
+export type PortfolioExperience = {
   slug: string;
   name: string;
   tag: string;
   image: string;
-  href: string;
+  gallery?: string[];
+  href?: string;
   // DRAFT — placeholder summary, confirm/edit before this ever ships publicly.
   summary: string;
 };
@@ -189,9 +194,11 @@ export type CaseStudy = {
   callout?: string;
   clientLogos?: ClientLogo[];
   externalCaseStudies?: ExternalCaseStudy[];
-  experiences?: LandmarkExperience[];
-  tactics: string[];
-  closingLine?: { pre: string; emphasis: string };
+  experiences?: PortfolioExperience[];
+  heroGallery?: { src: string; width: number; height: number }[];
+  tactics?: string[];
+  closingLine?: { pre: string; emphasis?: string; rotatingWords?: { text: string; withPrefix?: boolean }[] };
+  videoEmbed?: { youtubeId: string };
   prev?: { href: string; label: string };
   next?: { href: string; label: string };
 };
@@ -255,6 +262,34 @@ export const caseStudies: Record<string, CaseStudy> = {
     ],
     callout:
       "Growth compounds when the product mix, the promotion, and the retailer's next order all point in the same direction.",
+    heroGallery: [
+      { src: "/design/images/alerzo-hero-revolve-01.jpg", width: 819, height: 1024 },
+      { src: "/design/images/alerzo-hero-revolve-02.jpg", width: 819, height: 1024 },
+      { src: "/design/images/alerzo-hero-revolve-03.jpg", width: 2048, height: 2048 },
+      { src: "/design/images/alerzo-hero-revolve-04.jpg", width: 2048, height: 2048 },
+      { src: "/design/images/alerzo-hero-revolve-05.jpg", width: 800, height: 876 },
+      { src: "/design/images/alerzo-hero-revolve-06.jpg", width: 2048, height: 2048 },
+      { src: "/design/images/alerzo-hero-revolve-07.jpg", width: 1080, height: 1080 },
+      { src: "/design/images/alerzo-hero-revolve-08.jpg", width: 1169, height: 790 },
+      { src: "/design/images/alerzo-hero-revolve-09.jpg", width: 1080, height: 1080 },
+      { src: "/design/images/alerzo-hero-revolve-10.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-11.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-12.jpg", width: 1440, height: 960 },
+      { src: "/design/images/alerzo-hero-revolve-13.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-14.jpg", width: 2001, height: 2002 },
+      { src: "/design/images/alerzo-gallery-section-0.jpg", width: 512, height: 344 },
+      { src: "/design/images/alerzo-gallery-section-2.jpg", width: 1390, height: 926 },
+      { src: "/design/images/alerzoshop-1.jpg", width: 1200, height: 800 },
+      { src: "/design/images/alerzo-hero-revolve-15.jpg", width: 819, height: 1024 },
+      { src: "/design/images/alerzo-hero-revolve-16.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-17.jpeg", width: 399, height: 501 },
+      { src: "/design/images/alerzo-hero-revolve-18.jpg", width: 1268, height: 1600 },
+      { src: "/design/images/alerzo-hero-revolve-19.jpg", width: 2048, height: 2048 },
+      { src: "/design/images/alerzo-hero-revolve-20.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-21.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-22.jpeg", width: 447, height: 447 },
+      { src: "/design/images/alerzo-hero-revolve-23.jpg", width: 1440, height: 1567 },
+    ],
     clientLogos: [
       { name: "Golden Penny (Flour Mills of Nigeria)", src: "/logos/clients/golden-penny-fmn.jpg" },
       { name: "Indomie (Multipro)", src: "/logos/clients/indomie-multipro.png" },
@@ -270,17 +305,93 @@ export const caseStudies: Record<string, CaseStudy> = {
       { name: "Diageo", src: "/logos/clients/diageo.png" },
       { name: "Reckitt", src: "/logos/clients/reckitt.jpg" },
     ],
-    tactics: [
-      "Co-authored the Seven Up and Alerzo Growth Strategy and designed a three-month campaign calendar with bulk-order incentives, in-app advertising, tiered loyalty, a top-200 retailer leaderboard, and SMS/social pushes, turning a 200,000+ retailer network into a growth channel for a major beverage manufacturer.",
-      "Applied RFM segmentation and cohort analysis, built around the 'Heroes' active-retailer rewards tier, to optimize assortment and basket composition, lifting repeat-purchase rate by 24% and basket volumes by 30%, while retailer retention rose from 66% to 68% and churn fell from 33% to 32% in a single quarter.",
-      "Built a monthly fast-mover/slow-mover product classification model to guide pricing, delisting, and promotional decisions, still in use today behind programs like the Back-to-School cereal-carton incentive and the Self-Pickup Center rollout.",
-      "Secured commercial partnerships with leading CPG manufacturers, including Flour Mills and UAC Foods through a Zeebly ERP integration, and delivered sell-through analytics that shaped partner procurement, pricing, and rebate decisions.",
-      "Designed a data-monetization model combining a 1% rebate on manufacturer sell-in, sell-out, and inventory dashboards with paid API access for real-time data sync.",
-      "Ran a full-funnel regional activation campaign, generating $1.3M+ in sales within 12 days, 7% above forecast, and 5,000+ incremental orders.",
-      "Drove 18% YoY category growth across pasta, flour, noodles, and agro-allied SKUs through data-informed category planning.",
-      "Led AlerzoShop go-to-market and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding.",
-      "Built a revenue-optimized inventory mix model that cut stockouts by 15% and reduced excess inventory by more than 15% on key lines.",
+    experiences: [
+      {
+        slug: "alerzo-gtm",
+        name: "Alerzoshop Go-To-Market",
+        tag: "Platform Launch",
+        image: "/design/images/alerzo-gtm-1.jpg",
+        gallery: [
+          "/design/images/alerzo-gtm-1.jpg",
+          "/design/images/alerzo-gtm-2.jpg",
+          "/design/images/alerzo-gtm-3.jpg",
+          "/design/images/alerzo-gtm-4.jpg",
+        ],
+        summary:
+          "Led AlerzoShop go-to-market and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding.",
+      },
+      {
+        slug: "growth-campaigns",
+        name: "Growth Campaigns",
+        tag: "Brand Partnership",
+        image: "/design/images/alerzo-gallery-section-2.jpg",
+        gallery: [
+          "/design/images/alerzo-gallery-section-2.jpg",
+          "/design/images/alerzo-gallery-section-0.jpg",
+          "/design/images/alerzo-project-item-body-section-0.png",
+        ],
+        summary:
+          "Co-authored the Seven-Up Growth Strategy and a three-month campaign calendar with bulk-order incentives and a top-200 retailer leaderboard, then ran a full-funnel regional activation that generated $1.3M+ in sales within 12 days, 7% above forecast.",
+      },
+      {
+        slug: "heroes-loyalty-program",
+        name: "Heroes Loyalty Program",
+        tag: "Retention and Loyalty",
+        image: "/design/images/alerzo-loyalty-1.jpg",
+        gallery: [
+          "/design/images/alerzo-loyalty-1.jpg",
+          "/design/images/alerzo-loyalty-2.jpg",
+          "/design/images/alerzo-loyalty-3.png",
+          "/design/images/alerzo-loyalty-4.jpg",
+        ],
+        summary:
+          "Built the 'Heroes' active-retailer rewards tier on RFM segmentation, lifting repeat-purchase rate 24% and basket volumes 30% in a single quarter.",
+      },
+      {
+        slug: "joint-business-planning",
+        name: "Joint Business Planning",
+        tag: "Partnerships and Data",
+        image: "/design/images/alerzoshop-2.avif",
+        gallery: [
+          "/design/images/alerzoshop-2.avif",
+          "/design/images/alerzo-warehouse-delivery.jpeg",
+          "/design/images/alerzo-gallery-section-0.jpg",
+        ],
+        summary:
+          "Secured ERP-integrated partnerships with Flour Mills and UAC Foods, then built a data-monetization model pairing sell-through dashboards with paid API access to shape joint pricing, procurement, and rebate decisions.",
+      },
+      {
+        slug: "payments-financial-inclusion",
+        name: "Payments and Financial Inclusion",
+        tag: "Payments and Fintech",
+        image: "/design/images/alerzo-payments-1.jpg",
+        gallery: [
+          "/design/images/alerzo-payments-1.jpg",
+          "/design/images/alerzo-payments-2.jpg",
+          "/design/images/alerzo-payments-3.jpg",
+          "/design/images/alerzo-payments-4.jpg",
+          "/design/images/alerzo-payments-5.jpg",
+          "/design/images/alerzo-payments-6.jpg",
+          "/design/images/alerzo-payments-7.jpg",
+          "/design/images/alerzo-payments-8.jpg",
+          "/design/images/alerzo-payments-9.jpg",
+        ],
+        summary:
+          "Extended fintech and micro-finance-bank partnerships that unlocked $6M+ in retailer deposits, while scaling Smart POS terminal deployment to 7,000+ devices processing $17M+ in monthly transaction volume.",
+      },
     ],
+    closingLine: {
+      pre: "Serving last-mile retailers ",
+      rotatingWords: [
+        { text: "efficiently" },
+        { text: "everywhere" },
+        { text: "financial inclusion", withPrefix: true },
+        { text: "payments", withPrefix: true },
+        { text: "inventory management", withPrefix: true },
+        { text: "business management solutions", withPrefix: true },
+      ],
+    },
+    videoEmbed: { youtubeId: "h_tG--FTo1Y" },
     prev: { href: "/work/laserglow", label: "Laserglow" },
     next: { href: "/work/landmark-africa", label: "Landmark Africa" },
   },

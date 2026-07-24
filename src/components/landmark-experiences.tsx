@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import type { LandmarkExperience } from "@/content/site-content";
+import type { PortfolioExperience } from "@/content/site-content";
 
-export function LandmarkExperiences({ experiences }: { experiences: LandmarkExperience[] }) {
+export function LandmarkExperiences({ experiences }: { experiences: PortfolioExperience[] }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [openSlug, setOpenSlug] = useState<string | null>(null);
 
