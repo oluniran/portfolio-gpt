@@ -21,6 +21,10 @@ export const competencies = {
     "HubSpot",
     "Tableau",
     "TikTok",
+    "Attio",
+    "Instagram",
+    "YouTube",
+    "Klaviyo",
   ],
   performance: [
     "Paid Search",
@@ -276,6 +280,15 @@ export const caseStudies: Record<string, CaseStudy> = {
       { src: "/design/images/alerzo-gallery-section-0.jpg", width: 512, height: 344 },
       { src: "/design/images/alerzo-gallery-section-2.jpg", width: 1390, height: 926 },
       { src: "/design/images/alerzoshop-1.jpg", width: 1200, height: 800 },
+      { src: "/design/images/alerzo-hero-revolve-15.jpg", width: 819, height: 1024 },
+      { src: "/design/images/alerzo-hero-revolve-16.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-17.jpeg", width: 399, height: 501 },
+      { src: "/design/images/alerzo-hero-revolve-18.jpg", width: 1268, height: 1600 },
+      { src: "/design/images/alerzo-hero-revolve-19.jpg", width: 2048, height: 2048 },
+      { src: "/design/images/alerzo-hero-revolve-20.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-21.jpg", width: 1440, height: 1440 },
+      { src: "/design/images/alerzo-hero-revolve-22.jpeg", width: 447, height: 447 },
+      { src: "/design/images/alerzo-hero-revolve-23.jpg", width: 1440, height: 1567 },
     ],
     clientLogos: [
       { name: "Golden Penny (Flour Mills of Nigeria)", src: "/logos/clients/golden-penny-fmn.jpg" },
@@ -295,13 +308,14 @@ export const caseStudies: Record<string, CaseStudy> = {
     experiences: [
       {
         slug: "alerzo-gtm",
-        name: "Alerzo Go-To-Market",
+        name: "Alerzoshop Go-To-Market",
         tag: "Platform Launch",
-        image: "/design/images/alerzo-gallery-section-0.jpg",
+        image: "/design/images/alerzo-gtm-1.jpg",
         gallery: [
-          "/design/images/alerzo-gallery-section-0.jpg",
-          "/design/images/alerzo-gallery-section-1.jpg",
-          "/design/images/alerzoshop-1.jpg",
+          "/design/images/alerzo-gtm-1.jpg",
+          "/design/images/alerzo-gtm-2.jpg",
+          "/design/images/alerzo-gtm-3.jpg",
+          "/design/images/alerzo-gtm-4.jpg",
         ],
         summary:
           "Led AlerzoShop go-to-market and customer-journey mapping, using workflow automation and digital campaigns to expand personalized retailer outreach and onboarding.",
@@ -323,11 +337,12 @@ export const caseStudies: Record<string, CaseStudy> = {
         slug: "heroes-loyalty-program",
         name: "Heroes Loyalty Program",
         tag: "Retention and Loyalty",
-        image: "/design/images/alerzo-warehouse-delivery.jpeg",
+        image: "/design/images/alerzo-loyalty-1.jpg",
         gallery: [
-          "/design/images/alerzo-warehouse-delivery.jpeg",
-          "/design/images/alerzo-gallery-section-1.jpg",
-          "/design/images/alerzoshop-2.avif",
+          "/design/images/alerzo-loyalty-1.jpg",
+          "/design/images/alerzo-loyalty-2.jpg",
+          "/design/images/alerzo-loyalty-3.png",
+          "/design/images/alerzo-loyalty-4.jpg",
         ],
         summary:
           "Built the 'Heroes' active-retailer rewards tier on RFM segmentation, lifting repeat-purchase rate 24% and basket volumes 30% in a single quarter.",
